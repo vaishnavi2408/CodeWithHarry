@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Code With Harry is my attempt to teach basics and those coding techniques to people in short time which took me ages to learn. At Code With Harry, I provide a quick and to the point demo along with resources of anything and everything I teach. Source code and other resources are hosted on my website CodeWithHarry.com. I provide source code(if any) in the description of every video.
+  ">
+
+
+  <title>Free Programming Videos, Courses & More In Hindi - Code With Harry</title>
+  <!-- Bootstrap CSS -->
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/sketchy/bootstrap.min.css" integrity="sha384-NkI/Nlr1DZ5rUXWWdnuZb97FQRgCCcwC66DC+HUCY0oVx6BgBHUfPcwL1vwp93JZ" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="https://codewithharry.com/static/home/css/index.css">
+
+
+
+  <link rel="stylesheet" href="https://codewithharry.com/static/home/css/navbar.css">
+  <link rel="icon" type="image/png" href="https://codewithharry.com/static/home/img/favicon.png">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60726752-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-60726752-3');
+  </script>
+
+  <!-- Google Ads Auto -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-9655830461045889",
+      enable_page_level_ads: true
+    });
+  </script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/"><img class="brandLogo" src="https://codewithharry.com/static/home/img/photo.png" alt="My image"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item font-weight-bold">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+
+        <li class="nav-item font-weight-bold">
+          <a class="nav-link" href="/videos">Videos</a>
+        </li>
+
+        <li class="nav-item font-weight-bold">
+          <a class="nav-link" href="/blog">Blog</a>
+        </li>
+
+        <li class="nav-item font-weight-bold">
+          <a class="nav-link" href="/contact">Contact Me</a>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0 mr-3" method="get" action="/search/">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
+        <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+
+      </form>
+
+      <div>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#loginModal">Login</button>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#signupModal">SignUp</button>
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModal">Login using your credentials</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <form action="/profile/login" method='post'>
+            <input type="hidden" name="csrfmiddlewaretoken" value="Sag4yeJDG42Ttlipi09PErGrNVe416j2ynjB0nEkkEfzSpGWxmdBySEoDaGmEMYc">
+            <div class="form-group">
+              <label for="lusername">Username</label>
+              <input type="name" class="form-control" id="luname" placeholder="Enter your username"
+              name="uname">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="lpassword" placeholder="Enter your password"
+              name="password">
+            </div>
+            <div class="g-recaptcha" data-sitekey="6LdvcqwUAAAAACmPYNVoiJA7D84xLSQQt5g9p10m"></div>
+            <input type="hidden" name="path" value="/">
+
+            <button type="submit" class="btn btn-danger mt-2" id="loginsubmit">Login</button>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- SignUp Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupModal">SignUp for an account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <form name="contact" method="post" action="/profile/signup">
+            <input type="hidden" name="csrfmiddlewaretoken" value="Sag4yeJDG42Ttlipi09PErGrNVe416j2ynjB0nEkkEfzSpGWxmdBySEoDaGmEMYc">
+
+            <div class="form-group">
+              <label for="uname">Username</label>
+              <input type="text" class="form-control" id="uname" placeholder="Enter your Name" name="uname">
+              <small id="unamehelp" class="form-text text-muted px-1">
+                Your unique username must be less than 10 characters (only lowecase letters, numbers & underscores
+                allowed) with no spaces
+              </small>
+            </div>
+            <div class="form-group">
+              <label for="name">First Name</label>
+              <input type="text" class="form-control" id="fname" placeholder="Enter your First Name" name="fname">
+            </div>
+            <div class="form-group">
+              <label for="name">Last Name</label>
+              <input type="text" class="form-control" id="lname" placeholder="Enter your Last Name" name="lname">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <div class="mx-0">
+                <div class="col-md-8 px-0">
+                  <input type="email" class="form-control" id="email" placeholder="Enter your Email" name="email">
+                  <small id="otpMessage" class="form-text"></small>
+                </div>
+                <div class="col-md-4 my-1 px-0">
+                  <button class="btn btn-danger btn-sm mt-2" id="otpbtn">Send OTP</button>
+                </div>
+              </div>
+
+            </div>
+            <div class="form-group">
+              <label for="otp">Enter OTP</label>
+              <input type="text" class="form-control" id="otp" placeholder="Enter OTP" name="otp">
+            </div>
+
+            <div class="form-group">
+              <label for="password">Choose a password</label>
+              <input type="password" class="form-control" id="password" placeholder="Choose a password" name="password">
+            </div>
+            <div class="form-group">
+              <label for="password2">Retype a password</label>
+              <input type="password" class="form-control" id="password2" placeholder="Retype your password"
+              name="password2">
+            </div>
+            <div class="g-recaptcha" data-sitekey="6LdvcqwUAAAAACmPYNVoiJA7D84xLSQQt5g9p10m"></div>
+            <input type="hidden" name="path" value="/">
+            <button type="submit" class="btn btn-danger mt-2">SignUp</button>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <img src="https://codewithharry.com/static/home/img/photo.png" alt="logo" width="120">
+      <h1 class="jumbotron-heading"><span id="typed"></span></h1>
+      <p class="lead text-muted">
+        Confused on which course to take? I have got you covered. Browse courses and find out
+        the best course for you. Its free!<br>Code With Harry is my attempt to teach basics and those coding
+        techniques to people in short time which took me ages to learn.
+      </p>
+      <p>
+        <a href="/blog" class="btn btn-danger my-2">Browse Blog</a>
+        <a href="/videos" class="btn btn-success my-2">Browse Video Tutorials</a>
+        <a href="/contact" class="btn btn-primary my-2">Contact Me</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="card mx-auto my-2 p-2 align-items-center" style="width: 18rem;">
+        <img src="https://codewithharry.com/static/home/img/coding.jpg" class="padded card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">Free Video Courses</h5>
+          <p class="card-text text-center">
+            Get your programming career started with these free video courses. Source code is
+            available with all the videos for your better experience
+          </p>
+          <a href="/videos" class="btn btn-primary d-block">Browse Video Courses</a>
+        </div>
+      </div>
+
+      <div class="card mx-auto my-2 p-2 align-items-center" style="width: 18rem;">
+        <img src="https://codewithharry.com/static/home/img/lambda.png" class="padded card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">Coding Articles</h5>
+          <p class="card-text text-center">
+            Some of the latest coding information compiled as coding articles. Keep your
+            programming knowledge up to date with our coding articles.
+          </p>
+          <a href="/blog" class="btn btn-primary d-block">Go to Blog</a>
+        </div>
+      </div>
+
+      <div class="card mx-auto my-2 p-2 align-items-center" style="width: 18rem;">
+        <img src="https://codewithharry.com/static/home/img/python.png" class="padded card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">Contact Me</h5>
+          <p class="card-text text-center">
+            Learn programming from our free courses. Examples are available with these
+            tutorials. You can contact me for any doubt and I will get back to you!
+          </p>
+          <a href="/contact" class="btn btn-primary d-block">Contact Me</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- FOOTER -->
+  <footer class="container-fluid bg-dark my-0 py-3 text-light">
+    <p class="mb-0 text-center">
+      &copy; 2020-2021 CodeWithHarry.com
+    </p>
+    <p class="mb-0 text-center">
+      <a href="#">Back to top |</a>
+      <a href="#">Privacy |</a>
+      <a href="#">Terms</a>
+    </p>
+
+  </footer>
+  <!-- Custom JavaScript -->
+  <script src="https://apis.google.com/js/platform.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/433888fe69.js" crossorigin="anonymous" defer></script>
+  <script>
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    let otpbtn = document.getElementById('otpbtn');
+    if (otpbtn != undefined) {
+      otpbtn.addEventListener('click', (e) => {
+        otpbtn.innerText = 'Sending...';
+        e.preventDefault();
+        if (!otpbtn.classList.contains('disabled')) {
+          otpbtn.classList.add('disabled');
+          otpbtn.disabled = true;
+          csrf_token = getCookie('csrftoken');
+          let formData = new FormData();
+          formData.append('email', document.getElementById('email').value);
+          formData.append('csrfmiddlewaretoken', csrf_token);
+          fetch('/utils/sendotp', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+            if (data.startsWith("Error")) {
+              otpMessage.classList.add('text-danger');
+              otpbtn.innerText = 'Error';
+            } else {
+              otpMessage.classList.add('text-success');
+              otpbtn.innerText = 'OTP Sent';
+            }
+            otpMessage.innerText = data;
+          })
+          .catch(error => {
+            console.error(error)
+          })
+        } else {
+          // Otp has already been sent
+        }
+
+      });
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js" async defer></script>
+  <script>
+    window.onload = function () {
+      console.log("loaded")
+      var typed = new Typed('#typed',
+        {
+          strings: ["Welcome to CodeWithHarry",
+            "Learn Python",
+            "Web development",
+            "Data Science",
+            "Machine Learning",
+            "and other awesome programming concepts with me :)"],
+          backSpeed: 15,
+          smartBackspace: true,
+          backDelay: 1200,
+          startDelay: 1000,
+          typeSpeed: 25,
+          loop: true,
+        });
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w==" crossorigin="anonymous"></script>
+  <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
