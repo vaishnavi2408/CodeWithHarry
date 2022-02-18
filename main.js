@@ -10,3 +10,4 @@ let linktag = `<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/b
 console.log(linktag)
 
 $('head').append(linktag)
+console.log("ello");
